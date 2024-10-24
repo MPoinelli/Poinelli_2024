@@ -1,0 +1,292 @@
+# Diagnostic Package Choices
+#-----------------
+# for each output-stream:
+#  filename(n) : prefix of the output file name (only 8.c long) for outp.stream n
+#  frequency(n):< 0 : write snap-shot output every multiple of |frequency| (iter)
+#               > 0 : write time-average output every multiple of frequency (iter)
+#  levels(:,n) : list of levels to write to file (Notes: declared as REAL)
+#                 when this entry is missing, select all common levels of this list
+#  fields(:,n) : list of diagnostics fields (8.c) (see "available_diagnostics" file 
+#                 for the list of all available diag. in this particular config)
+#--------------------------------------------------------------------
+#
+ &diagnostics_list
+#
+   dumpatlast = .TRUE.,
+#---
+# WEEKLY
+#---
+  frequency(1) = 604800.0,
+   fields(1:20,1) = 'ETAN    ','SIarea  ','SIheff ','SIhsnow ',
+                 'SIatmQnt','SIatmFW ','oceQnet ','oceFWflx',
+                 'oceTAUX ','oceTAUY ',
+                 'ADVxHEFF','ADVyHEFF','DFxEHEFF','DFyEHEFF',
+                 'ADVxSNOW','ADVySNOW','DFxESNOW','DFyESNOW',
+                 'SIuice  ','SIvice  ',
+   filename(1) = 'weekly/state_2d_set1',
+   timePhase(1) = 0.,
+#---
+ frequency(2) = 604800.0,
+ fields(1:23,2) ='oceFWflx','SIatmFW ','TFLUX   ','SItflux ',
+                  'SFLUX   ','oceQsw  ','SIareaPR','SIareaPT',
+                  'SIheffPT','SIhsnoPT','SIaQbOCN','SIaQbATC',
+                  'SIaQbATO','SIdHbOCN','SIdSbATC','SIdSbOCN',
+                  'SIdHbATC','SIdHbATO','SIdHbFLO','SIdAbATO',
+                  'SIdAbATC','SIdAbOCN','SIdA    ',
+  filename(2) = 'weekly/state_2d_set2',
+  timePhase(2) = 0.,
+#---
+   frequency(3) = 604800.0,
+   fields(1:10,3) = 'SHIfwFlx','SHIhtFlx','SHIgammT','SHIgammS',
+                    'SHIuStar','SHICDrag','SHIthdrv','SHIsadrv',
+                    'SHI_uloc','SHI_vloc',
+   filename(3) = 'weekly/state_2d_set3',
+   timePhase(3) = 0.,
+#---
+  frequency(4) = 604800.0,
+   fields(1:8,4) = 'DFxE_TH ','DFyE_TH ','ADVx_TH ','ADVy_TH ',
+                 'DFxE_SLT','DFyE_SLT','ADVx_SLT','ADVy_SLT',
+   filename(4) = 'weekly/trsp_3d_set1',
+   timePhase(4) = 0.,
+#---
+  frequency(5) = 604800.0,
+   fields(1:21,5) ='EXFhs   ', 'EXFhl   ', 'EXFlwnet', 'EXFswnet', 'EXFlwdn ',
+                  'EXFswdn ','EXFqnet ','EXFtaux ','EXFtauy ','EXFuwind',
+                  'EXFvwind','EXFwspee','EXFatemp','EXFaqh ','EXFevap ',
+                  'EXFpreci','EXFsnow ','EXFempmr','EXFpress','EXFroff ',
+                  'EXFroft ',
+   filename(5) = 'weekly/EXF_forcing_set1',
+   timePhase(5) = 0.,
+#---
+  frequency(6) = 604800.0,
+   fields(1:3,6) = 'THETA   ','SALT    ','RHOAnoma'
+   filename(6) = 'weekly/state_3d_set1',
+   timePhase(6) = 0.,
+#---
+  frequency(7) = 604800.0,
+   fields(1:4,7) = 'UVELMASS','VVELMASS','WVELMASS', 'momVort3'
+   filename(7) = 'weekly/state_3d_set2',
+   timePhase(7) = 0.,
+#---
+#   frequency(8) = 604800.0,
+#   fields(1:2,8) = 'TRAC01    ','TRAC02  ',
+#   filename(8) = 'weekly/state_3d_set3',
+#   timePhase(8) = 0.,
+#---
+# MONTHLY
+#---
+  frequency(9) = 2592000.0,
+   fields(1:20,9) = 'ETAN    ','SIarea  ','SIheff ','SIhsnow ',
+                 'SIatmQnt','SIatmFW ','oceQnet ','oceFWflx',
+                 'oceTAUX ','oceTAUY ',
+                 'ADVxHEFF','ADVyHEFF','DFxEHEFF','DFyEHEFF',
+                 'ADVxSNOW','ADVySNOW','DFxESNOW','DFyESNOW',
+                 'SIuice  ','SIvice  ',
+   filename(9) = 'monthly/state_2d_set1',
+   timePhase(9) = 0.,
+#---
+ frequency(10) = 2592000.0,
+ fields(1:23,10) ='oceFWflx','SIatmFW ','TFLUX   ','SItflux ',
+                  'SFLUX   ','oceQsw  ','SIareaPR','SIareaPT',
+                  'SIheffPT','SIhsnoPT','SIaQbOCN','SIaQbATC',
+                  'SIaQbATO','SIdHbOCN','SIdSbATC','SIdSbOCN',
+                  'SIdHbATC','SIdHbATO','SIdHbFLO','SIdAbATO',
+                  'SIdAbATC','SIdAbOCN','SIdA    ',
+  filename(10) = 'monthly/state_2d_set2',
+  timePhase(10) = 0.,
+#---
+   frequency(11) = 2592000.0,
+   fields(1:10,11) = 'SHIfwFlx','SHIhtFlx','SHIgammT','SHIgammS',
+                    'SHIuStar','SHICDrag','SHIthdrv','SHIsadrv',
+                    'SHI_uloc','SHI_vloc',
+   filename(11) = 'monthly/state_2d_set3',
+   timePhase(11) = 0.,
+#---
+  frequency(12) = 2592000.0,
+   fields(1:8,12) = 'DFxE_TH ','DFyE_TH ','ADVx_TH ','ADVy_TH ',
+                 'DFxE_SLT','DFyE_SLT','ADVx_SLT','ADVy_SLT',
+   filename(12) = 'monthly/trsp_3d_set1',
+   timePhase(12) = 0.,
+#---
+  frequency(13) = 2592000.0,
+   fields(1:21,13) ='EXFhs   ', 'EXFhl   ', 'EXFlwnet', 'EXFswnet', 'EXFlwdn ',
+                  'EXFswdn ','EXFqnet ','EXFtaux ','EXFtauy ','EXFuwind',
+                  'EXFvwind','EXFwspee','EXFatemp','EXFaqh ','EXFevap ',
+                  'EXFpreci','EXFsnow ','EXFempmr','EXFpress','EXFroff ',
+                  'EXFroft ',
+   filename(13) = 'monthly/EXF_forcing_set1',
+   timePhase(13) = 0.,
+#---
+  frequency(14) = 2592000.0,
+   fields(1:3,14) = 'THETA   ','SALT    ','RHOAnoma',
+   filename(14) = 'monthly/state_3d_set1',
+   timePhase(14) = 0.,
+#---
+  frequency(15) = 2592000.0,
+   fields(1:4,15) = 'UVELMASS','VVELMASS','WVELMASS', 'momVort3'
+   filename(15) = 'monthly/state_3d_set2',
+   timePhase(15) = 0.,
+#---
+#   frequency(16) = 2592000.0,
+#   fields(1:2,16) = 'TRAC01    ','TRAC02  ',
+#   filename(16) = 'monthly/state_3d_set3',
+#   timePhase(16) = 0.,
+#---
+#---
+# DAILY
+#---
+  frequency(17) = 86400.0,
+   fields(1:20,17) = 'ETAN    ','SIarea  ','SIheff ','SIhsnow ',
+                 'SIatmQnt','SIatmFW ','oceQnet ','oceFWflx',
+                 'oceTAUX ','oceTAUY ',
+                 'ADVxHEFF','ADVyHEFF','DFxEHEFF','DFyEHEFF',
+                 'ADVxSNOW','ADVySNOW','DFxESNOW','DFyESNOW',
+                 'SIuice  ','SIvice  ',
+   filename(17) = 'daily/state_2d_set1',
+   timePhase(17) = 0.,
+#---
+ frequency(18) = 86400.0,
+ fields(1:23,18) ='oceFWflx','SIatmFW ','TFLUX   ','SItflux ',
+                  'SFLUX   ','oceQsw  ','SIareaPR','SIareaPT',
+                  'SIheffPT','SIhsnoPT','SIaQbOCN','SIaQbATC',
+                 'SIaQbATO','SIdHbOCN','SIdSbATC','SIdSbOCN',
+                  'SIdHbATC','SIdHbATO','SIdHbFLO','SIdAbATO',
+                  'SIdAbATC','SIdAbOCN','SIdA    ',
+  filename(18) = 'daily/state_2d_set2',
+  timePhase(18) = 0.,
+#---
+   frequency(19) = 86400.0,
+   fields(1:10,19) = 'SHIfwFlx','SHIhtFlx','SHIgammT','SHIgammS',
+                    'SHIuStar','SHICDrag','SHIthdrv','SHIsadrv',
+                    'SHI_uloc','SHI_vloc',
+   filename(19) = 'daily/state_2d_set3',
+   timePhase(19) = 0.,
+#---
+#  frequency(20) = 86400.0,
+#   fields(1:8,20) = 'DFxE_TH ','DFyE_TH ','ADVx_TH ','ADVy_TH ',
+#                 'DFxE_SLT','DFyE_SLT','ADVx_SLT','ADVy_SLT',
+#   filename(20) = 'daily/trsp_3d_set1',
+#   timePhase(20) = 0.,
+#---
+  frequency(21) = 86400.0,
+   fields(1:21,21) ='EXFhs   ', 'EXFhl   ', 'EXFlwnet', 'EXFswnet', 'EXFlwdn ',
+                  'EXFswdn ','EXFqnet ','EXFtaux ','EXFtauy ','EXFuwind',
+                  'EXFvwind','EXFwspee','EXFatemp','EXFaqh ','EXFevap ',
+                  'EXFpreci','EXFsnow ','EXFempmr','EXFpress','EXFroff ',
+                  'EXFroft ',
+   filename(21) = 'daily/EXF_forcing_set1',
+   timePhase(21) = 0.,
+#---
+  frequency(22) = 86400.0,
+   fields(1:3,22) = 'THETA   ','SALT    ','RHOAnoma'
+   filename(22) = 'daily/state_3d_set1',
+  timePhase(22) = 0.,
+#---
+  frequency(23) = 86400.0,
+   fields(1:4,23) = 'UVELMASS','VVELMASS','WVELMASS', 'momVort3'
+   filename(23) = 'daily/state_3d_set2',
+   timePhase(23) = 0.,
+#---
+#   frequency(24) = 86400.0,
+#   fields(1:2,24) = 'TRAC01    ','TRAC02  ',
+#   filename(24) = 'daily/state_3d_set3',
+#   timePhase(24) = 0.,
+#---
+#---
+# DAILY SNAPSHOTS
+#---
+  frequency(25) = -86400.0,
+   fields(1:20,25) = 'ETAN    ','SIarea  ','SIheff ','SIhsnow ',
+                 'SIatmQnt','SIatmFW ','oceQnet ','oceFWflx',
+                 'oceTAUX ','oceTAUY ',
+                 'ADVxHEFF','ADVyHEFF','DFxEHEFF','DFyEHEFF',
+                 'ADVxSNOW','ADVySNOW','DFxESNOW','DFyESNOW',
+                 'SIuice  ','SIvice  ',
+   filename(25) = 'daily_snap/state_2d_set1',
+   timePhase(25) = 0.,
+#---
+ frequency(26) = -86400.0,
+ fields(1:23,26) ='oceFWflx','SIatmFW ','TFLUX   ','SItflux ',
+                  'SFLUX   ','oceQsw  ','SIareaPR','SIareaPT',
+                  'SIheffPT','SIhsnoPT','SIaQbOCN','SIaQbATC',
+                  'SIaQbATO','SIdHbOCN','SIdSbATC','SIdSbOCN',
+                  'SIdHbATC','SIdHbATO','SIdHbFLO','SIdAbATO',
+                  'SIdAbATC','SIdAbOCN','SIdA    ',
+  filename(26) = 'daily_snap/state_2d_set2',
+  timePhase(26) = 0.,
+#---
+   frequency(27) = -86400.0,
+   fields(1:10,27) = 'SHIfwFlx','SHIhtFlx','SHIgammT','SHIgammS',
+                    'SHIuStar','SHICDrag','SHIthdrv','SHIsadrv',
+                    'SHI_uloc','SHI_vloc',
+   filename(27) = 'daily_snap/state_2d_set3',
+   timePhase(27) = 0.,
+#---
+#  frequency(28) = -86400.0,
+#   fields(1:8,28) = 'DFxE_TH ','DFyE_TH ','ADVx_TH ','ADVy_TH ',
+#                 'DFxE_SLT','DFyE_SLT','ADVx_SLT','ADVy_SLT',
+#   filename(28) = 'daily_snap/trsp_3d_set1',
+#   timePhase(28) = 0.,
+#---
+  frequency(29) = -86400.0,
+   fields(1:21,29) ='EXFhs   ', 'EXFhl   ', 'EXFlwnet', 'EXFswnet', 'EXFlwdn ',
+                  'EXFswdn ','EXFqnet ','EXFtaux ','EXFtauy ','EXFuwind',
+                  'EXFvwind','EXFwspee','EXFatemp','EXFaqh ','EXFevap ',
+                  'EXFpreci','EXFsnow ','EXFempmr','EXFpress','EXFroff ',
+                  'EXFroft ',
+   filename(29) = 'daily_snap/EXF_forcing_set1',
+   timePhase(29) = 0.,
+#---
+  frequency(30) = -86400.0,
+   fields(1:3,30) = 'THETA   ','SALT    ','RHOAnoma',
+   filename(30) = 'daily_snap/state_3d_set1',
+   timePhase(30) = 0.,
+#---
+  frequency(31) = -86400.0,
+   fields(1:4,31) = 'UVELMASS','VVELMASS','WVELMASS', 'momVort3'
+   filename(31) = 'daily_snap/state_3d_set2',
+   timePhase(31) = 0.,
+#---
+#   frequency(32) = -86400.0,
+#   fields(1:2,32) = 'TRAC01    ','TRAC02  ',
+#   filename(32) = 'daily_snap/state_3d_set3',
+#   timePhase(32) = 0.,
+#---
+ /
+#
+#
+# Parameter for Diagnostics of per level statistics:
+#-----------------
+# for each output-stream:
+#  stat_fname(n) : prefix of the output file name (only 8.c long) for outp.stream n
+#  stat_freq(n):< 0 : write snap-shot output every |stat_freq| seconds
+#               > 0 : write time-average output every stat_freq seconds
+#  stat_phase(n)    : write at time = stat_phase + multiple of |stat_freq|
+#  stat_region(:,n) : list of "regions" (default: 1 region only=global)
+#  stat_fields(:,n) : list of diagnostics fields (8.c) (see "available_diagnostics.log"
+#                 file for the list of all available diag. in this particular config)
+#-----------------
+ &DIAG_STATIS_PARMS
+# diagSt_regMaskFile='basin_masks_eccollc_90x50.bin',
+# nSetRegMskFile=1,
+# set_regMask(1)= 1,  1,  1,  1,  1,  1,  1,  1,  1,
+#                 1,  1,  1,  1,  1,  1,  1,  1
+# val_regMask(1)= 1., 2., 3., 4., 5., 6., 7., 8., 9.,
+#                10.,11.,12.,13.,14.,15.,16.,17.
+##---
+# stat_fields(1,1)= 'ETAN    ','ETANSQ  ','DETADT2 ',
+#                   'UVEL    ','VVEL    ','WVEL    ',
+#                   'THETA   ','SALT    ',
+#    stat_fname(1)= 'dynStDiag',
+#     stat_freq(1)= 3153600.,
+# stat_region(1,1)=  1, 2, 3, 4, 5, 6, 7, 8, 9,
+#                   10,11,12,13,14,15,16,17
+##---
+# stat_fields(1,2)= 'oceTAUX ','oceTAUY ',
+#                   'surForcT','surForcS','TFLUX   ','SFLUX   ',
+#                   'oceQnet ','oceSflux','oceFWflx',
+#    stat_fname(2)= 'surfStDiag',
+#     stat_freq(2)= 3153600.,
+# stat_region(1,2)=  1, 2, 3, 4, 5, 6, 7, 8, 9,
+#                   10,11,12,13,14,15,16,17
+ /

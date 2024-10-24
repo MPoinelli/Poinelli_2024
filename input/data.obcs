@@ -1,0 +1,88 @@
+# ***************
+# Open boundaries
+# ***************
+ &OBCS_PARM01
+ OB_Jnorth =   2016*-1,
+ OB_Jsouth =   2016*1,
+ OB_Ieast  =   840*-1,
+ OB_Iwest  =   840*1,
+#
+ useOBCSprescribe =.TRUE.,
+# useOBCSbalance=.TRUE.,
+ useOBCSsponge    =.TRUE.,
+ OBCSsponge_UatNS =.FALSE.
+ OBCSsponge_VatEW =.FALSE.
+#
+ OBNsFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/FOBNs_latlon1_rev.bin',
+ OBNtFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/FOBNt_latlon1_rev.bin',
+ OBNuFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/FOBNu_latlon1_rt5_4.bin',
+ OBNvFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/FOBNv_latlon1_rt5_4m9.bin',
+#
+ OBSsFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros3d2016.bin',
+ OBStFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros3d2016.bin',
+ OBSuFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros3d2016.bin',
+ OBSvFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros3d2016.bin',
+#
+ OBEsFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros3d840.bin',
+ OBEtFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros3d840.bin',
+ OBEuFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros3d840.bin',
+ OBEvFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros3d840.bin',
+#
+ OBWsFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros3d840.bin',
+ OBWtFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros3d840.bin',
+ OBWuFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros3d840.bin',
+ OBWvFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros3d840.bin',
+#
+ OBNaFile   = '/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/FOBNa_latlon1.bin',
+ OBNhFile   = '/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/FOBNh_latlon1.bin',
+ OBNslFile  = '/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/FOBNsl_latlon1.bin',
+ OBNsnFile  = '/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/FOBNsn_latlon1.bin',
+ OBNuiceFile= '/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/FOBNuice_latlon1_rt5_3.bin',
+ OBNviceFile= '/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/FOBNvice_latlon1_rt5_3.bin',
+#
+ OBSaFile   ='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d2016.bin',
+ OBShFile   ='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d2016.bin',
+ OBSslFile  ='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d2016.bin',
+ OBSsnFile  ='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d2016.bin',
+ OBSuiceFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d2016.bin',
+ OBSviceFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d2016.bin',
+#
+ OBEaFile   ='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d840.bin',
+ OBEhFile   ='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d840.bin',
+ OBEslFile  ='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d840.bin',
+ OBEsnFile  ='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d840.bin',
+ OBEuiceFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d840.bin',
+ OBEviceFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d840.bin',
+#
+ OBWaFile   ='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d840.bin',
+ OBWhFile   ='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d840.bin',
+ OBWslFile  ='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d840.bin',
+ OBWsnFile  ='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d840.bin',
+ OBWuiceFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d840.bin',
+ OBWviceFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/zeros2d840.bin',
+#
+ useOBCStides = .TRUE.,
+#components   = M2       S2     N2       K2       K1      O1       P1       Q1       Mf         Mm
+#periods (hr) = 12.4206  12     12.6583  11.9672  23.9345 25.8193  24.0659  26.8684  327.8599   661.31
+ tidalPeriod  = 44714.16,43200.,45569.88,43081.92,86164.2,92949.48,86637.24,96726.24,1180295.64,2380716.,
+# OBSamFile='OBSam.seaice_obcs',
+ OBNamFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/OBNam.seaice_obcs.v',
+# OBNamtFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/OBNam.seaice_obcs.u',
+# OBEamFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/OBEam.seaice_obcs',
+# OBWamFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/OBWam.seaice_obcs',
+# OBSphFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/OBSph.seaice_obcs',
+ OBNphFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/OBNph.seaice_obcs.v',
+# OBNphtFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/OBNph.seaice_obcs.u',
+# OBEphFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/OBEph.seaice_obcs',
+# OBWphFile='/nobackupp11/mpoinell/thwaites_200m/repository_bin_files/OBWph.seaice_obcs',
+ &
+# *****************************************
+# Sponge Layer Parameters.
+# *****************************************
+ &OBCS_PARM03
+ Urelaxobcsinner=1296000.E0,
+ Urelaxobcsbound=43200.E0,
+ Vrelaxobcsinner=1296000.E0,
+ Vrelaxobcsbound=43200.E0,
+ spongeThickness=3,
+ &

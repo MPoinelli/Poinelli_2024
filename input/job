@@ -1,0 +1,19 @@
+#!/bin/bash
+#PBS -N ams200m01b
+#PBS -q devel
+#PBS -W group_list=s2393
+#PBS -l select=146:ncpus=20:model=ivy
+#PBS -l walltime=01:47:00
+#PBS -j oe
+#PBS -m abe
+#PBS -l site=needed=/home1+/home3+/home4+/nobackupp17
+
+module load comp-intel/2020.4.304
+module load mpi-hpe/mpt.2.28_25Apr23_rhel87
+module load szip/2.1.1
+module load hdf4/4.2.12 hdf5/1.8.18_mpt netcdf/4.4.1.1_mpt
+	
+export RUN_DIR=/nobackupp11/mpoinell/thwaites_200m/run_ams200m01b
+
+cd $RUN_DIR
+mpiexec -np 2910 ./mitgcmuv
