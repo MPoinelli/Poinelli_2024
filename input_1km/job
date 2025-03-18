@@ -1,0 +1,19 @@
+#!/bin/bash
+#PBS -N ams1km01g
+#PBS -q long
+#PBS -W group_list=s2729
+#PBS -l select=8:ncpus=20:model=ivy
+#PBS -l walltime=30:00:00
+#PBS -j oe
+#PBS -m abe
+#PBS -l site=needed=/home1+/home3+/home4+/nobackupp17
+
+module load comp-intel/2020.4.304
+module load mpi-hpe/mpt.2.28_25Apr23_rhel87
+module load szip/2.1.1
+module load hdf4/4.2.12 hdf5/1.8.18_mpt netcdf/4.4.1.1_mpt
+
+export RUN_DIR=/nobackupp11/mpoinell/thwaites_1km/run_ams1km01g/
+
+cd $RUN_DIR
+mpiexec -np 160 ./mitgcmuv

@@ -1,0 +1,34 @@
+# *******************************
+# Parameter for SHELFICE package
+# ******************************
+ &SHELFICE_PARM01
+ SHELFICEboundaryLayer = .TRUE.,
+ SHELFICEtopoFile   = '/nobackupp11/mpoinell/thwaites_1km/repository_bin_files/draft_2022_1km.bin',
+ SHELFICEconserve = .TRUE.,
+ no_slip_shelfice = .false.,
+ SHELFICEwriteState = .TRUE.,
+ SHELFICEuseGammaFrict = .TRUE.,
+# 
+# default parameters
+# 
+# SHELFICEheatTransCoeff = 1.0E-04,
+# SHELFICEsaltTransCoeff = 5.05E-07,
+# shiCdrag = 0.0015,
+#
+# parameters after jenkins et al. 2010, JPO (Ronne Ice Shelf)
+#
+ SHELFICEheatTransCoeff = 1.1E-02,
+ SHELFICEsaltTransCoeff = 3.1E-04,
+ shiCdrag = 0.0097,
+#
+# parameters after Davis and Nicholls 2019, JGR:Ocean (Larsen C)
+#
+# SHELFICEheatTransCoeff = 2.35E-02,
+# SHELFICEsaltTransCoeff = 6.7E-04,
+# shiCdrag = 0.0022,
+#
+# runoff by Goldberg2023
+# SHELFICEaddrunoff=.FALSE.
+# SHELFICESubglFluxFile='/nobackupp11/mpoinell/thwaites/repository_bin_files/subglac_flux.bin'
+/
+ &
